@@ -8,7 +8,7 @@ async function delay(ms) {
 
 async function Home({ params }) {
 
-  await delay(1000);
+  await delay(5000);
   let selectedCategory
   if(params.category?.length > 0){
     selectedCategory = true;
@@ -17,7 +17,7 @@ async function Home({ params }) {
     <HomeContainer 
       selectedCategory = {{
         id: params.category?.[0] ?? "",
-        movies : selectedCategory ? Movies.results.slice(0, 7) : []
+        movies : selectedCategory ? Movies.results.slice(0, 6) : []
       }}
     />
   );

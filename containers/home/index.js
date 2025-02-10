@@ -14,7 +14,7 @@ function HomeContainer({ selectedCategory }) {
         {(selectedCategory.movies.length > 0) && (
           <MovieSection 
             title={Genres.genres.find(
-              (genre)=> genre.id.toString() === selectedCategory.id
+              (genre)=> genre.id.toString() === selectedCategory.id.toString()
             ).name}
             movies={selectedCategory.movies}
         />
