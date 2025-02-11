@@ -3,9 +3,13 @@ import { FeaturedMovie } from "@/components/featured-movie";
 import Categories from "@/components/categories";
 import MovieSection from "@/components/movie-section";
 
-
-function HomeContainer({ popularMovies = [], favMovies=[], categories=[], selectedCategory }) {
-  return (
+function HomeContainer({ 
+  popularMovies = [], 
+  favMovies=[], 
+  categories=[], 
+  selectedCategory }) {
+  
+    return (
       <div>
         <FeaturedMovie movie={popularMovies?.[0]}/>
         <Categories categories={categories.slice(0, 5)}/>

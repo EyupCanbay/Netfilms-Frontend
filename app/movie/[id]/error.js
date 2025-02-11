@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import React from 'react';
 
-
 function ErrorPage() {
     return (
         <div
@@ -18,7 +17,7 @@ function ErrorPage() {
             <Link
                 href="/"
                 style={{ textDecoration: "underline", fontSize: 20, marginTop: 8 }}
-            >
+        >
                 Go home
             </Link>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Styles from "./styles.module.css"
+import Styles from "./styles.module.css";
         
 
 function MovieSection({ title, movies }){

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import  {FaPlayCircle}  from "react-icons/fa";;
-import styles from "./styles.module.css"
+import {FaPlayCircle} from "react-icons/fa";;
+import styles from "./styles.module.css";
 
 export default function Header() {
     return(
