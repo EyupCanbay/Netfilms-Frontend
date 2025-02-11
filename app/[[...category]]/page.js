@@ -42,8 +42,8 @@ const getGenresFetch = async() => {
   return res.json();
 }
 
-const getSingleCategory = async() => {
-  const res = await fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc',
+const getSingleCategory = async(genreId) => {
+  const res = await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${genreId}`,
   {
     method: 'GET',
     headers: {
@@ -65,9 +65,9 @@ async function Home({ params }) {
 
 const [{results: popularMovies}, {results: favMovies}, {genres: categories} ] =
   await Promise.all([topRatedPromise, favMoviesPromise, genresPromise]);
-  
+
   if(params.category?.length > 0){
-    const { results } = await getSingleCategory(params.category[0]);
+    const { results } = await getSingleCategory(params.category[0]);    
     selectedCategory = results;
   }
 
@@ -78,7 +78,7 @@ const [{results: popularMovies}, {results: favMovies}, {genres: categories} ] =
       categories={categories}
       selectedCategory = {{
         id: params.category?.[0] ?? "",
-        movies : selectedCategory ? Movies.results.slice(0, 6) : []
+        movies : selectedCategory ? selectedCategory.slice(0, 6) : []
       }}
     />
   );
